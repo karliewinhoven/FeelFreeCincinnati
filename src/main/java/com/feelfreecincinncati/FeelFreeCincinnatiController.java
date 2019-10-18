@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FeelFreeCincinnatiController {
 	
 	@RequestMapping("/index")
-	public String start() {
+	public String redirectToIndex() {
 		return "index";
 	}
 
