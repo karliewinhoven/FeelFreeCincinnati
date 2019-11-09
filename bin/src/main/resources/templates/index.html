@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="ISO-8859-1"/>
 <title>Feel Free Cincinnati</title>
-<link rel="stylesheet" href="css/freestyle.css" type="text/css" />
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style>
@@ -12,7 +11,6 @@ h1 {font-size: 50px}
 body {background-color: #BBBBBB}
 footer {text-align: center; font-size:75%; font-style: italic}
 </style>
-
 </head>
 <body>
 <header><div class="text-center"><h1>Feel Free Cincinnati</h1></div>
@@ -39,10 +37,10 @@ footer {text-align: center; font-size:75%; font-style: italic}
     <option value="1">Sunday</option>
     <option value="2">Monday</option>
     <option value="3">Tuesday</option>
-    <option value="4">Wednesday</option>
-    <option value="5">Thursday</option>
-    <option value="6">Friday</option>
-    <option value="7">Saturday</option>
+    <option value="3">Wednesday</option>
+    <option value="3">Thursday</option>
+    <option value="3">Friday</option>
+    <option value="3">Saturday</option>
   </select>
     </div>
     <div class="col">
@@ -52,9 +50,7 @@ footer {text-align: center; font-size:75%; font-style: italic}
   </div> <br>
   <p class="text-center"><button type="submit" class="btn btn-primary">Feeling Free</button></p>
 </form>
-<br><br>
 
-<p class="text-center" th:text="${adventureDTO}"/>
 
 
 <br><br><br><br><br>
