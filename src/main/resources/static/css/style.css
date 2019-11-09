@@ -1,0 +1,20 @@
+@charset "ISO-8859-1";
+
+header {
+	color: #00FFFF; 
+	background-color: #000000;
+	}
+	
+h1 {
+	font-size: 50px
+	}
+	
+body {
+	background-color: #BBBBBB
+	}
+	
+footer {
+	text-align: center;
+	font-size:75%; 
+	font-style: italic
+	}

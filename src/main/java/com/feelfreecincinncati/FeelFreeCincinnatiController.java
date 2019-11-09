@@ -11,6 +11,7 @@ import com.feelfreecincinncati.dto.EventDTO;
 import com.feelfreecincinncati.service.EventServiceStub;
 import com.feelfreecincinncati.service.iAdventureService;
 
+
 @Controller
 public class FeelFreeCincinnatiController {
 	
@@ -29,6 +30,11 @@ public class FeelFreeCincinnatiController {
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String home() {
+		return "index";
+	}
+
+	@RequestMapping("/")
+	public String error() {
 		return "index";
 	}
 
