@@ -25,6 +25,7 @@ public class FeelFreeCincinnatiController {
 		AdventureDTO adventureDTO = adventureServiceStub.fetchById(4);
 		model.addAttribute("adventureDTO", adventureDTO);
 		EventDTO eventDTO = eventServiceStub.fetchById(2);
+		model.addAttribute("eventDTO", eventDTO);
 		return "index";
 	}
 	

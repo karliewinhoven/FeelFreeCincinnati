@@ -13,7 +13,7 @@ import com.feelfreecincinncati.dto.AdventureDTO;
 		@Override
 		public AdventureDTO fetchById(int id) {
 			AdventureDTO adventureDTO = new AdventureDTO();
-			adventureDTO.setAdvID(4);
+			adventureDTO.setAdventureID(4);
 			adventureDTO.setAdventure("Run a marathon");
 			return adventureDTO;
 		}

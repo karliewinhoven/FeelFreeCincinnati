@@ -1,15 +1,15 @@
 package com.feelfreecincinncati.dto;
 
 public class AdventureDTO {
-	private int advID;
+	private int adventureID;
 	private String adventure;
 	
 	
-	public int getAdvID() {
-		return advID;
+	public int getAdventureID() {
+		return adventureID;
 	}
-	public void setAdvID(int advID) {
-		this.advID = advID;
+	public void setAdventureID(int adventureID) {
+		this.adventureID = adventureID;
 	}
 	public String getAdventure() {
 		return adventure;
