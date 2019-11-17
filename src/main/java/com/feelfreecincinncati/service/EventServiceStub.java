@@ -5,10 +5,8 @@ import org.springframework.stereotype.Component;
 import com.feelfreecincinncati.dto.EventDTO;
 
 
-
-
 @Component
-public class EventServiceStub {
+public class EventServiceStub implements iEventService{
 	public EventDTO fetchById(int id) {
 		EventDTO eventDTO = new EventDTO();
 		eventDTO.setEventID(4);
