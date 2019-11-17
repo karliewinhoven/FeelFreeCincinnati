@@ -4,8 +4,8 @@ import com.feelfreecincinncati.dto.AdventureDTO;
 
 public interface iAdventureService {
 
-	AdventureDTO fetchById(int id);
+	public AdventureDTO fetchById(int id);
 
-	void save(AdventureDTO adventureDTO);
+	public void save(AdventureDTO adventureDTO);
 
 }
