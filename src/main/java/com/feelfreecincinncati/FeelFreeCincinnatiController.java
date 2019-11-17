@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.feelfreecincinncati.dto.AdventureDTO;
 import com.feelfreecincinncati.dto.EventDTO;
-import com.feelfreecincinncati.service.EventServiceStub;
 import com.feelfreecincinncati.service.iAdventureService;
+import com.feelfreecincinncati.service.iEventService;
 
 
 @Controller
@@ -18,7 +18,7 @@ public class FeelFreeCincinnatiController {
 	@Autowired
 	private iAdventureService adventureServiceStub;
 	@Autowired
-	private EventServiceStub eventServiceStub; 
+	private iEventService eventServiceStub; 
 	
 	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public String start(Model model) {
