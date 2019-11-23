@@ -5,7 +5,7 @@ public class EventDTO {
 	private String name; 
 	private String Address;
 	private double cost;
-	private String discription;
+	private String description;
 	
 	public int getEventID() {
 		return eventID;
@@ -23,7 +23,7 @@ public class EventDTO {
 		return Address;
 	}
 	public void setAddress(String address) {
-		Address = address;
+		this.Address = address;
 	}
 	public double getCost() {
 		return cost;
@@ -31,10 +31,16 @@ public class EventDTO {
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
-	public String getDiscription() {
-		return discription;
+	public String getDescription() {
+		return description;
 	}
-	public void setDiscription(String discription) {
-		this.discription = discription;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "Go to a " +name + "for " + description + ". it is at " +Address + " and will cost $" +cost;
 	}
 }

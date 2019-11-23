@@ -18,3 +18,11 @@ footer {
 	font-size:75%; 
 	font-style: italic
 	}
+	
+#inputGroupSelect01{
+	width: 400px;
+}
+
+#budget{
+	width: 400px;
+}
