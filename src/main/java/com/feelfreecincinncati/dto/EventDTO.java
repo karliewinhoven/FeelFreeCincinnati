@@ -1,9 +1,12 @@
 package com.feelfreecincinncati.dto;
 
+
+
 public class EventDTO {
 	private int eventID;
 	private String name; 
 	private String Address;
+	//**Insert date variable here
 	private double cost;
 	private String description;
 	
@@ -25,6 +28,7 @@ public class EventDTO {
 	public void setAddress(String address) {
 		this.Address = address;
 	}
+
 	public double getCost() {
 		return cost;
 	}
