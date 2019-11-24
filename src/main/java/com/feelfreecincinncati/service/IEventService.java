@@ -2,7 +2,7 @@ package com.feelfreecincinncati.service;
 
 import com.feelfreecincinncati.dto.EventDTO;
 
-public interface iEventService {
+public interface IEventService {
 
 	EventDTO fetchById(int id);
 

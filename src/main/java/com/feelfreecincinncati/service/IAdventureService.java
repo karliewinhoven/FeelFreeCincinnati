@@ -2,7 +2,7 @@ package com.feelfreecincinncati.service;
 
 import com.feelfreecincinncati.dto.AdventureDTO;
 
-public interface iAdventureService {
+public interface IAdventureService {
 
 	AdventureDTO fetchById(int id);
 

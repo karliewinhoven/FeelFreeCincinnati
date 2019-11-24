@@ -2,11 +2,11 @@ package com.feelfreecincinncati.feelfreecincinnati;
 
 import org.junit.Test;
 
-import com.feelfreecincinncati.service.iEventService;
+import com.feelfreecincinncati.service.IEventService;
 
 public class EventServiceTest {
 
-	iEventService eventService;
+	IEventService eventService;
 	
 	@Test
 	public void fetchEvents_validateNoResultsForJunkData() {

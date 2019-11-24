@@ -81,28 +81,19 @@ function switchView(){
   </select>
     </div>
     <div class="col">
-      <input type="number" class="form-control" id="budget" placeholder="Budget">
+      <input type="text" class="form-control" name="budget" id="budget" placeholder="Budget">
     </div>
   </div>
   </div> <br>
   
-  <button type="submit" class="btn btn-primary mx-auto d-block" id="funBtn">Find the Fun</button>
+  <button type="submit" class="btn btn-primary mx-auto d-block" name="funtBtn" id="funBtn">Find the Fun</button>
 </form>
 
 <form id="adventureform" action="#" th:action="@{/getAdventure}" th:object="${adventureDTO}" method="GET">
-<button type="submit" class="btn btn-primary mx-auto d-block" id="freeBtn">Feeling Free</button>
+<button type="submit" class="btn btn-primary mx-auto d-block" name="freeBtn" id="freeBtn">Feeling Free</button>
 </form><br><br>
 
-<table style="width: 60%" id="singleDayCalendar">
-	<tr>
-		<th id="day"></th>
-	</tr>
-	<tr>
-		<td id="event"></td>
-	</tr>
 
-
-</table>
 
 <p class="text-center" th:text="${adventureDTO}"/>
 <p class="text-center" th:text="${eventDTO}"/>

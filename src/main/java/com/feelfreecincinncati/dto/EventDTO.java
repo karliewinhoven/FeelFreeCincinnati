@@ -6,7 +6,7 @@ public class EventDTO {
 	private int eventID;
 	private String name; 
 	private String Address;
-	//**Insert date variable here
+	//**Insert date variable here and generate getter and setter and add into the toString method at bottom**
 	private double cost;
 	private String description;
 	

@@ -8,7 +8,7 @@ import com.feelfreecincinncati.dto.EventDTO;
 
 
 	@Component
-	public class EventServiceStub implements iEventService {
+	public class EventServiceStub implements IEventService {
 		@Override
 		public EventDTO fetchById(int id) {
 			EventDTO eventDTO = new EventDTO();
