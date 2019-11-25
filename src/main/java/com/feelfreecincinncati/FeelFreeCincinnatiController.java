@@ -8,15 +8,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.feelfreecincinncati.dto.AdventureDTO;
 import com.feelfreecincinncati.dto.EventDTO;
+import com.feelfreecincinncati.service.AdventureServiceStub;
 import com.feelfreecincinncati.service.EventServiceStub;
-import com.feelfreecincinncati.service.iAdventureService;
-
 
 @Controller
 public class FeelFreeCincinnatiController {
 	
 	@Autowired
-	private iAdventureService adventureServiceStub;
+	private AdventureServiceStub adventureServiceStub;
 	@Autowired
 	private EventServiceStub eventServiceStub; 
 	
