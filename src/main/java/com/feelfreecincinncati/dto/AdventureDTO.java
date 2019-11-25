@@ -2,25 +2,30 @@ package com.feelfreecincinncati.dto;
 
 public class AdventureDTO {
 	private int adventureID;
-	private String adventure;
-	
-	
+	private String adventureName;
+
 	public int getAdventureID() {
 		return adventureID;
 	}
+
+
 	public void setAdventureID(int adventureID) {
 		this.adventureID = adventureID;
 	}
-	public String getAdventure() {
-		return adventure;
+
+
+	public String getAdventureName() {
+		return adventureName;
 	}
-	public void setAdventure(String adventure) {
-		this.adventure = adventure;
+
+
+	public void setAdventureName(String adventureName) {
+		this.adventureName = adventureName;
 	}
 	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Go out and: " + adventure;
+		return "Go out and: " + adventureName;
 	}
 }

@@ -1,6 +1,74 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<head onload="switchView()">
+<style>
+
+#freeBtn{
+	display: none;
+}
+
+#funBtn{
+	display: none;
+}
+#singleDayCalendar{
+	display: none;
+}
+
+</style>
+<script>
+
+function switchView(){
+	if(document.getElementById('eventRdo').checked){
+		document.getElementById('freeBtn').style.display = "none";
+		document.getElementById('funBtn').style.display = "block";
+	}else{
+		document.getElementById('funBtn').style.display = "none";
+		document.getElementById('freeBtn').style.display = "block";
+	}
+}
+
+function makeCalendar(){
+	var v = document.getElementById("inputGroupSelect01");
+	var dayVal = v.options[v.selectedIndex].value;
+	var day = document.getElementById("day");
+	var event = document.getElementById("event");
+	document.getElementById('singleDayCalendar').style.display = "block";
+	
+	switch (dayVal){
+	
+	case 1:
+		day.appendChild("Sunday");
+		event.appendChild("sample event");
+		break;
+	case 2:
+		day.appendChild("Monday");
+		event.appendChild("sample event");
+		break;
+	case 3:
+		day.appendChild("Tuesday");
+		event.appendChild("sample event");
+		break;
+	case 4:
+		day.appendChild("Wednesday");
+		event.appendChild("sample event");
+		break;
+	case 5:
+		day.appendChild("Thursday");
+		event.appendChild("sample event");
+		break;
+	case 6:
+		day.appendChild("Friday");
+		event.appendChild("sample event");
+		break;
+	case 7:
+		day.appendChild("Saturday");
+		event.appendChild("sample event");
+		break;
+	
+	}
+}
+
+</script>
 <meta charset="ISO-8859-1"/>
 <title>Feel Free Cincinnati</title>
 
@@ -13,22 +81,22 @@
 <header><div class="text-center"><h1>Feel Free Cincinnati</h1></div>
 <div class="text-center">
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="eventRdo" name="customRadioInline1" class="custom-control-input">
+  <input type="radio" id="eventRdo" name="customRadioInline1" class="custom-control-input" onclick="switchView()">
   <label class="custom-control-label" for="eventRdo">Find an Event</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="adventureRdo" name="customRadioInline1" class="custom-control-input">
+  <input type="radio" id="adventureRdo" name="customRadioInline1" class="custom-control-input" onclick="switchView()">
   <label class="custom-control-label" for="adventureRdo">Go on an Adventure</label>
 </div></div>
 
 </header>
 
 <br><br><br>
-<form>
+<form onsubmit="makeCalendar()">
 <div class="text-center">
   <div class="form-row">
     <div class="col">
-      <select class="custom-select" id="inputGroupSelect01"  style="width: 400px">
+      <select class="custom-select" id="inputGroupSelect01">
      
     <option selected style='display: none' value=''>Free Day</option>
     <option value="1">Sunday</option>
@@ -41,13 +109,25 @@
   </select>
     </div>
     <div class="col">
-      <input type="number" class="form-control" id="budget" placeholder="Budget" style="width: 400px">
+      <input type="number" class="form-control" id="budget" placeholder="Budget">
     </div>
   </div>
   </div> <br>
-  <p class="text-center"><button type="submit" class="btn btn-primary">Feeling Free</button></p>
+  <p class="text-center"><button type="submit" class="btn btn-primary" id="freeBtn">Feeling Free</button></p>
+  <p class="text-center"><button type="submit" class="btn btn-primary" id="funBtn">Find the Fun</button></p>
 </form>
 <br><br>
+
+<table style="width: 60%" id="singleDayCalendar">
+	<tr>
+		<th id="day"></th>
+	</tr>
+	<tr>
+		<td id="event"></td>
+	</tr>
+
+
+</table>
 
 <p class="text-center" th:text="${adventureDTO}"/>
 
