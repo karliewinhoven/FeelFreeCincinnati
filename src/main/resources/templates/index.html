@@ -1,72 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head onload="switchView()">
+<head>
 <style>
 
 #freeBtn{
-	display: none;
+	display: "none";
 }
 
 #funBtn{
-	display: none;
+	display: "none";
 }
-#singleDayCalendar{
-	display: none;
-}
+
 
 </style>
 <script>
 
 function switchView(){
+
+	
 	if(document.getElementById('eventRdo').checked){
+		document.getElementById('adventureform').style.display = "none";
+		document.getElementById('eventform').style.display = "block";
 		document.getElementById('freeBtn').style.display = "none";
 		document.getElementById('funBtn').style.display = "block";
-	}else{
+		
+	}else if(document.getElementById('adventureRdo').checked){
+		document.getElementById('eventform').style.display = "none";
+		document.getElementById('adventureform').style.display = "block";
 		document.getElementById('funBtn').style.display = "none";
 		document.getElementById('freeBtn').style.display = "block";
 	}
-}
-
-function makeCalendar(){
-	var v = document.getElementById("inputGroupSelect01");
-	var dayVal = v.options[v.selectedIndex].value;
-	var day = document.getElementById("day");
-	var event = document.getElementById("event");
-	document.getElementById('singleDayCalendar').style.display = "block";
-	
-	switch (dayVal){
-	
-	case 1:
-		day.appendChild("Sunday");
-		event.appendChild("sample event");
-		break;
-	case 2:
-		day.appendChild("Monday");
-		event.appendChild("sample event");
-		break;
-	case 3:
-		day.appendChild("Tuesday");
-		event.appendChild("sample event");
-		break;
-	case 4:
-		day.appendChild("Wednesday");
-		event.appendChild("sample event");
-		break;
-	case 5:
-		day.appendChild("Thursday");
-		event.appendChild("sample event");
-		break;
-	case 6:
-		day.appendChild("Friday");
-		event.appendChild("sample event");
-		break;
-	case 7:
-		day.appendChild("Saturday");
-		event.appendChild("sample event");
-		break;
-	
+	else{
+		document.getElementById('eventform').style.display = "none";
+		document.getElementById('adventureform').style.display = "none";
+		document.getElementById('funBtn').style.display = "none";
+		document.getElementById('freeBtn').style.display = "none";
 	}
 }
+
+
 
 </script>
 <meta charset="ISO-8859-1"/>
@@ -77,12 +49,12 @@ function makeCalendar(){
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 
 </head>
-<body>
+<body onload="switchView()">
 <header><div class="text-center"><h1>Feel Free Cincinnati</h1></div>
 <div class="text-center">
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="eventRdo" name="customRadioInline1" class="custom-control-input" onclick="switchView()">
-  <label class="custom-control-label" for="eventRdo">Find an Event</label>
+  <input type="radio" id="eventRdo" name="customRadioInline1" value="checked" class="custom-control-input" onclick="switchView()">
+  <label class="custom-control-label" for="eventRdo" >Find an Event</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
   <input type="radio" id="adventureRdo" name="customRadioInline1" class="custom-control-input" onclick="switchView()">
@@ -92,11 +64,11 @@ function makeCalendar(){
 </header>
 
 <br><br><br>
-<form onsubmit="makeCalendar()">
+<form id="eventform" action="#" th:action="@{/getEvent}" th:object="${eventDTO}" method="GET">
 <div class="text-center">
   <div class="form-row">
     <div class="col">
-      <select class="custom-select" id="inputGroupSelect01">
+      <select class="custom-select" id="dayselect">
      
     <option selected style='display: none' value=''>Free Day</option>
     <option value="1">Sunday</option>
@@ -109,28 +81,22 @@ function makeCalendar(){
   </select>
     </div>
     <div class="col">
-      <input type="number" class="form-control" id="budget" placeholder="Budget">
+      <input type="text" class="form-control" name="budget" id="budget" placeholder="Budget">
     </div>
   </div>
   </div> <br>
-  <p class="text-center"><button type="submit" class="btn btn-primary" id="freeBtn">Feeling Free</button></p>
-  <p class="text-center"><button type="submit" class="btn btn-primary" id="funBtn">Find the Fun</button></p>
+  
+  <button type="submit" class="btn btn-primary mx-auto d-block" name="funtBtn" id="funBtn">Find the Fun</button>
 </form>
-<br><br>
 
-<table style="width: 60%" id="singleDayCalendar">
-	<tr>
-		<th id="day"></th>
-	</tr>
-	<tr>
-		<td id="event"></td>
-	</tr>
+<form id="adventureform" action="#" th:action="@{/getAdventure}" th:object="${adventureDTO}" method="GET">
+<button type="submit" class="btn btn-primary mx-auto d-block" name="freeBtn" id="freeBtn">Feeling Free</button>
+</form><br><br>
 
 
-</table>
 
 <p class="text-center" th:text="${adventureDTO}"/>
-
+<p class="text-center" th:text="${eventDTO}"/>
 
 <br><br><br><br><br>
 <footer>Copyright &copy; 2019 FeelFreeInc</footer>

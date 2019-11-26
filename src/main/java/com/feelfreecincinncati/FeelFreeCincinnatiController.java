@@ -8,24 +8,36 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.feelfreecincinncati.dto.AdventureDTO;
 import com.feelfreecincinncati.dto.EventDTO;
-import com.feelfreecincinncati.service.EventServiceStub;
-import com.feelfreecincinncati.service.iAdventureService;
+import com.feelfreecincinncati.service.IAdventureService;
+import com.feelfreecincinncati.service.IEventService;
 
 
 @Controller
 public class FeelFreeCincinnatiController {
 	
 	@Autowired
-	private iAdventureService adventureServiceStub;
+	private IAdventureService adventureServiceStub;
 	@Autowired
-	private EventServiceStub eventServiceStub; 
+	private IEventService eventServiceStub; 
+	
+	@RequestMapping(value="/getEvent")
+	public String getEvent(EventDTO eventDTO) {
+		
+		eventDTO = eventServiceStub.fetchById(4);	
+		return "index";
+		
+	}
+	
+	@RequestMapping(value="/getAdventure")
+	public String getAdventure(AdventureDTO adventureDTO) {
+		adventureDTO = adventureServiceStub.fetchById(4);
+		return "index";
+	}
 	
 	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public String start(Model model) {
-		AdventureDTO adventureDTO = adventureServiceStub.fetchById(4);
-		model.addAttribute("adventureDTO", adventureDTO);
-		EventDTO eventDTO = eventServiceStub.fetchById(2);
-		model.addAttribute("eventDTO", eventDTO);
+		model.addAttribute("eventDTO", new EventDTO());
+		model.addAttribute("advenuteDTO", new AdventureDTO());
 		return "index";
 	}
 	

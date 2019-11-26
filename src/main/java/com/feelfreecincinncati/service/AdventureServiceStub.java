@@ -7,7 +7,7 @@ import com.feelfreecincinncati.dto.AdventureDTO;
 
 
 	@Component
-	public class AdventureServiceStub implements iAdventureService {
+	public class AdventureServiceStub implements IAdventureService {
 		
 		
 		@Override
